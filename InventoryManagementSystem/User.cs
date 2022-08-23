@@ -102,14 +102,12 @@ namespace InventoryManagementSystem
 
 
                 // SQL Query to insert new user
-                string sqlquery = $"DELETE FROM `user` WHERE (`username` = {username});";
+                string sqlquery = $"DELETE FROM `user` WHERE (`username` = ?username);";
                 MySqlCommand cmd = new MySqlCommand(sqlquery, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    Console.WriteLine(rdr[0] + " | " + rdr[1] + "|" + rdr[2]);
-                }
-                rdr.Close();
+                cmd.Parameters.Add("?username", MySqlDbType.VarChar).Value = username;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+         
 
             }
             catch (Exception e)
