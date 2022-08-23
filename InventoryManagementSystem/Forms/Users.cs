@@ -83,5 +83,16 @@ namespace InventoryManagementSystem.Forms
                 }
             }
         }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            var addUserForm = new AddUser();
+            addUserForm.ShowDialog();
+            
+            this.UpdateDataGridView();
+            
+            
+            
+        }
     }
 }
