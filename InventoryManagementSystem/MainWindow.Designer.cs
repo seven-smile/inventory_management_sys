@@ -36,10 +36,11 @@
             this.btnCategories = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.lblLogo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.lblLogo = new System.Windows.Forms.Label();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,6 +79,7 @@
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnSettings
             // 
@@ -179,6 +181,18 @@
             this.panelLogo.Size = new System.Drawing.Size(220, 80);
             this.panelLogo.TabIndex = 0;
             // 
+            // lblLogo
+            // 
+            this.lblLogo.AutoSize = true;
+            this.lblLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLogo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblLogo.ForeColor = System.Drawing.Color.LightGray;
+            this.lblLogo.Location = new System.Drawing.Point(32, 28);
+            this.lblLogo.Name = "lblLogo";
+            this.lblLogo.Size = new System.Drawing.Size(131, 34);
+            this.lblLogo.TabIndex = 0;
+            this.lblLogo.Text = "SHOPRITE";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -197,31 +211,29 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(335, 22);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(102, 40);
+            this.lblTitle.Size = new System.Drawing.Size(100, 38);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "HOME";
             // 
-            // lblLogo
+            // panelMain
             // 
-            this.lblLogo.AutoSize = true;
-            this.lblLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblLogo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblLogo.ForeColor = System.Drawing.Color.LightGray;
-            this.lblLogo.Location = new System.Drawing.Point(32, 28);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(131, 34);
-            this.lblLogo.TabIndex = 0;
-            this.lblLogo.Text = "SHOPRITE";
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(220, 80);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(828, 547);
+            this.panelMain.TabIndex = 3;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 627);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Name = "MainWindow";
             this.Text = "Main Window";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
@@ -245,5 +257,6 @@
         private Button btnCategories;
         private Label lblTitle;
         private Label lblLogo;
+        private Panel panelMain;
     }
 }
