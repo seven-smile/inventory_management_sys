@@ -1,7 +1,6 @@
 ﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +9,15 @@ namespace InventoryManagementSystem
 {
     internal class User
     {
+        public string id;
         public string username;
         public string name;
         public string role;
         public string password;
 
-        public User(string username, string name, string role, string password)
+        public User(string id, string username, string name, string role, string password)
         {
+            this.id = id;
             this.username = username;
             this.name = name;
             this.role = role;
@@ -49,10 +50,9 @@ namespace InventoryManagementSystem
             return 1;
         }
 
-        public static DataTable GetUsers()
+        public static List<User> GetUsers()
         {
             List<User> users = new List<User>();
-            DataTable user_table = new DataTable();
             try
             {
                 // Opening a connection to MySql server
@@ -66,22 +66,21 @@ namespace InventoryManagementSystem
                 string sqlquery = "SELECT * FROM user;";
                 MySqlCommand cmd = new MySqlCommand(sqlquery, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
-                user_table.Load(rdr);
                 
-                //while (rdr.Read())
-                //{
-                  //  users.Add(new User(rdr[1].ToString(), rdr[2].ToString(), rdr[3].ToString(), rdr[4].ToString()));
-                //}
-                //rdr.Close();
+                while (rdr.Read())
+                {
+                    users.Add(new User(rdr[0].ToString(), rdr[1].ToString(), rdr[2].ToString(), rdr[3].ToString(), rdr[4].ToString()));
+                }
+                rdr.Close();
 
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return null;
+                return users;
             }
 
-            return user_table;
+            return users;
         }
 
         public static int DeleteUser(string username)

@@ -28,20 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridView dataGridView1;
+            this.dgvUser = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.addBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
-            dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvUser
+            // 
+            this.dgvUser.AllowUserToAddRows = false;
+            this.dgvUser.AllowUserToDeleteRows = false;
+            this.dgvUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUser.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.username,
+            this.name,
+            this.role,
+            this.password,
+            this.colEdit,
+            this.colDelete});
+            this.dgvUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUser.Location = new System.Drawing.Point(0, 0);
+            this.dgvUser.Name = "dgvUser";
+            this.dgvUser.ReadOnly = true;
+            this.dgvUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvUser.RowHeadersWidth = 51;
+            this.dgvUser.RowTemplate.Height = 29;
+            this.dgvUser.Size = new System.Drawing.Size(1007, 485);
+            this.dgvUser.TabIndex = 1;
             // 
             // panel1
             // 
@@ -77,30 +102,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Users";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.username,
-            this.role,
-            this.password,
-            this.Column2,
-            this.Column1});
-            dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            dataGridView1.Location = new System.Drawing.Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new System.Drawing.Size(1007, 485);
-            dataGridView1.TabIndex = 1;
-            // 
             // id
             // 
             this.id.HeaderText = "ID";
@@ -114,6 +115,13 @@
             this.username.MinimumWidth = 6;
             this.username.Name = "username";
             this.username.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Full Name";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // role
             // 
@@ -129,40 +137,46 @@
             this.password.Name = "password";
             this.password.ReadOnly = true;
             // 
-            // Column2
+            // colEdit
             // 
-            this.Column2.HeaderText = "Edit";
-            this.Column2.Image = global::InventoryManagementSystem.Properties.Resources.pencil;
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colEdit.HeaderText = "";
+            this.colEdit.Image = global::InventoryManagementSystem.Properties.Resources.pencil;
+            this.colEdit.MinimumWidth = 6;
+            this.colEdit.Name = "colEdit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colEdit.ToolTipText = "Edit Data";
+            this.colEdit.Width = 40;
             // 
-            // Column1
+            // colDelete
             // 
-            this.Column1.HeaderText = "Delete";
-            this.Column1.Image = global::InventoryManagementSystem.Properties.Resources.delete;
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colDelete.HeaderText = "";
+            this.colDelete.Image = global::InventoryManagementSystem.Properties.Resources.delete;
+            this.colDelete.MinimumWidth = 6;
+            this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colDelete.ToolTipText = "Delete Data";
+            this.colDelete.Width = 40;
             // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 545);
-            this.Controls.Add(dataGridView1);
+            this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Users";
             this.Text = "Users";
             this.Load += new System.EventHandler(this.Users_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,12 +186,13 @@
         private Panel panel1;
         private Button addBtn;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvUser;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn username;
+        private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn role;
         private DataGridViewTextBoxColumn password;
-        private DataGridViewImageColumn Column2;
-        private DataGridViewImageColumn Column1;
+        private DataGridViewImageColumn colEdit;
+        private DataGridViewImageColumn colDelete;
     }
 }
