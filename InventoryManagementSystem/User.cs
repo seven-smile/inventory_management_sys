@@ -36,9 +36,16 @@ namespace InventoryManagementSystem
 
 
                 // SQL Query to insert new user
-                string sqlquery = $"INSERT INTO `user` (`username`, `name`, `role`, `password`) VALUES ({username}, {name}, {role}, {password});";
+                string sqlquery = $"INSERT INTO `user` (`username`, `name`, `role`, `password`) VALUES (?username, ?name, ?role, ?password);";
                 MySqlCommand cmd = new MySqlCommand(sqlquery, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
+                cmd.Parameters.Add("?username", MySqlDbType.VarChar).Value = username;
+                cmd.Parameters.Add("?name", MySqlDbType.VarChar).Value = name;
+                cmd.Parameters.Add("?role", MySqlDbType.VarChar).Value = role;
+                cmd.Parameters.Add("?password", MySqlDbType.VarChar).Value = password;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                //MySqlDataReader rdr = cmd.ExecuteReader();
+                //rdr.Close();
 
             }
             catch (Exception e)
