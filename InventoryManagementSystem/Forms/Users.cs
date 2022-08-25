@@ -79,11 +79,23 @@ namespace InventoryManagementSystem.Forms
                 else if (e.ColumnIndex == this.colEdit.Index)
                 {
                     // retrieve username on the row where click event happened
+                    string toEditId = dgvUser.Rows[e.RowIndex].Cells[0].Value.ToString();
                     string toEditUsername = dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    string toEditName = dgvUser.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    string toEditRole = dgvUser.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    string toEditPassword = dgvUser.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                    // open the updateUser Form
+                    var updateUserForm = new UpdateUser(toEditId, toEditUsername, toEditName, toEditRole, toEditPassword);
+                    updateUserForm.ShowDialog();
+
+                    this.UpdateDataGridView();
+
                 }
             }
         }
 
+        
         private void addBtn_Click(object sender, EventArgs e)
         {
             var addUserForm = new AddUser();

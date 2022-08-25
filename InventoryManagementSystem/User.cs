@@ -119,9 +119,39 @@ namespace InventoryManagementSystem
             return 1;
         }
 
-        public static void UpdateUser()
+        public static int UpdateUser(int id, string username, string name, string role, string password)
         {
+            try
+            {
+                // Opening a connection to MySql server
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                MySqlConnection conn = new MySqlConnection(connectionString);
 
+                conn.Open();
+
+
+                // SQL Query to update user where id=id
+                string sqlquery = "UPDATE `user` SET `name` = ?name, `role` = ?role, `password` = ?password WHERE (`id` = ?id);";
+                
+                MySqlCommand cmd = new MySqlCommand(sqlquery, conn);
+                cmd.Parameters.Add("?username", MySqlDbType.VarChar).Value = username;
+                cmd.Parameters.Add("?name", MySqlDbType.VarChar).Value = name;
+                cmd.Parameters.Add("?role", MySqlDbType.VarChar).Value = role;
+                cmd.Parameters.Add("?password", MySqlDbType.VarChar).Value = password;
+                cmd.Parameters.Add("?id", MySqlDbType.Int64).Value = id;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                //MySqlDataReader rdr = cmd.ExecuteReader();
+                //rdr.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+
+            return 1;
         }
     }
 }
