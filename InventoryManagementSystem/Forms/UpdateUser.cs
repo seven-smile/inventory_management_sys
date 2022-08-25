@@ -42,13 +42,13 @@ namespace InventoryManagementSystem.Forms
             textBoxPassword1.Text = password;
             textBoxPassword2.Text = password;
 
-            // disable textfield
+            // disable username field
             textBoxUsername.Enabled = false;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            // Get all data in the textboxes
+            // Get all current(updated) data in the textboxes
             string username = textBoxUsername.Text;
             string password = textBoxPassword1.Text;
             string name = textBoxName.Text;
@@ -71,10 +71,10 @@ namespace InventoryManagementSystem.Forms
             }
 
             // Call the UpdateUser method to insert a new user into the database.
-            int createUser = User.UpdateUser(int.Parse(id), username, name, role, password);
+            int updateUser = User.UpdateUser(int.Parse(id), username, name, role, password);
 
             // if successful, close form.
-            if (createUser == 1) this.Close();
+            if (updateUser == 1) this.Close();
         }
     }
 }

@@ -10,60 +10,61 @@ using System.Windows.Forms;
 
 namespace InventoryManagementSystem.Forms
 {
-    public partial class Users : Form
+    public partial class Categories : Form
     {
-        
-        public Users()
+        public Categories()
         {
             InitializeComponent();
         }
 
-        // method to update data
         private void UpdateDataGridView()
         {
             // list of users
-            List<User> users = User.GetUsers();
+            List<Category> categories = Category.GetCategories();
 
             // clear dataGridView
-            dgvUser.Rows.Clear();
+            dgvCategory.Rows.Clear();
 
-            for (int i = 0; i < users.Count; i++)
+            for (int i = 0; i < categories.Count; i++)
             {
-                User user = users[i];
-                dgvUser.Rows.Add(user.id, user.username, user.name, user.role, user.password);
+                Category cat = categories[i];
+                dgvCategory.Rows.Add(cat.id, cat.name);
             }
         }
 
-        private void Users_Load(object sender, EventArgs e)
+        private void Categories_Load(object sender, EventArgs e)
         {
             // load table data
             this.UpdateDataGridView();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAddCategory_Click(object sender, EventArgs e)
         {
+            var addCategoryForm = new CategoryAdd();
+            addCategoryForm.ShowDialog();
 
+            this.UpdateDataGridView();
         }
 
-        private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
                 e.RowIndex >= 0)
-            {   
+            {
                 // if delete is clicked 
-                if (e.ColumnIndex == this.colDelete.Index)
+                if (e.ColumnIndex == this.colDelete_.Index)
                 {
                     // retrieve username on the row where click event happened
-                    string toDeleteUsername = dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    string toDeleteCat = dgvCategory.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                     // Delete confirmation
                     DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete row data.", "Delete Confirmation", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
                         // call method to delete user from databse
-                        int deleteResponse = User.DeleteUser(toDeleteUsername);
+                        int deleteResponse = Category.DeleteCategory(toDeleteCat);
 
                         // if delete action is successful, refresh dataGridView.
                         if (deleteResponse == 1) this.UpdateDataGridView();
@@ -73,36 +74,24 @@ namespace InventoryManagementSystem.Forms
                         //do something else
                     }
 
-                    
-                } 
+
+                }
                 // if edit is clicked
-                else if (e.ColumnIndex == this.colEdit.Index)
+                else if (e.ColumnIndex == this.colEdit_.Index)
                 {
                     // retrieve username on the row where click event happened
-                    string toEditId = dgvUser.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    string toEditUsername = dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    string toEditName = dgvUser.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    string toEditRole = dgvUser.Rows[e.RowIndex].Cells[3].Value.ToString();
-                    string toEditPassword = dgvUser.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    string toEditId = dgvCategory.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    string toEditCatName = dgvCategory.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    
 
                     // open the updateUser Form
-                    var updateUserForm = new UpdateUser(toEditId, toEditUsername, toEditName, toEditRole, toEditPassword);
+                    var updateUserForm = new CategoryUpdate(toEditId, toEditCatName);
                     updateUserForm.ShowDialog();
 
                     this.UpdateDataGridView();
 
                 }
             }
-        }
-
-        
-        private void addBtn_Click(object sender, EventArgs e)
-        {
-            var addUserForm = new AddUser();
-            addUserForm.ShowDialog();
-            
-            this.UpdateDataGridView();
-            
         }
     }
 }

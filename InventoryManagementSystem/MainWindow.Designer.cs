@@ -152,6 +152,7 @@
             this.btnCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategories.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCategories.UseVisualStyleBackColor = true;
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
             // btnProducts
             // 
