@@ -9,7 +9,8 @@ namespace InventoryManagementSystem
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-
+            
+            openChildForm(new Forms.MainDash());
         }
 
         private Form activeForm = null;

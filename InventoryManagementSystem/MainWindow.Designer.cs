@@ -59,7 +59,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 627);
+            this.panelMenu.Size = new System.Drawing.Size(220, 685);
             this.panelMenu.TabIndex = 1;
             // 
             // btnUsers
@@ -70,7 +70,7 @@
             this.btnUsers.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnUsers.Image = global::InventoryManagementSystem.Properties.Resources.group;
             this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsers.Location = new System.Drawing.Point(0, 507);
+            this.btnUsers.Location = new System.Drawing.Point(0, 565);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnUsers.Size = new System.Drawing.Size(220, 60);
@@ -89,7 +89,7 @@
             this.btnSettings.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSettings.Image = global::InventoryManagementSystem.Properties.Resources.setting;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 567);
+            this.btnSettings.Location = new System.Drawing.Point(0, 625);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnSettings.Size = new System.Drawing.Size(220, 60);
@@ -202,7 +202,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(220, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(828, 80);
+            this.panel1.Size = new System.Drawing.Size(1069, 80);
             this.panel1.TabIndex = 2;
             // 
             // lblTitle
@@ -211,7 +211,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(335, 22);
+            this.lblTitle.Location = new System.Drawing.Point(455, 22);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(100, 38);
             this.lblTitle.TabIndex = 0;
@@ -222,14 +222,14 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(220, 80);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(828, 547);
+            this.panelMain.Size = new System.Drawing.Size(1069, 605);
             this.panelMain.TabIndex = 3;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 627);
+            this.ClientSize = new System.Drawing.Size(1289, 685);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
