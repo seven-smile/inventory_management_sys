@@ -148,5 +148,82 @@ namespace InventoryManagementSystem
 
             return 1;
         }
+
+
+        // useful for the models referencing.
+        public static Dictionary<string, int> GetCategoryIds()
+        {
+            // This method helps get the category id given the category string
+
+            // list of Category Objects
+            Dictionary<string, int> categories = new Dictionary<string, int>();
+            try
+            {
+                // Opening a connection to MySql server
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                MySqlConnection conn = new MySqlConnection(connectionString);
+
+                conn.Open();
+
+
+                // SQL Query to insert new category
+                string sqlquery = "SELECT * FROM category;";
+                MySqlCommand cmd = new MySqlCommand(sqlquery, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    categories.Add(rdr[1].ToString(), int.Parse(rdr[0].ToString()));
+                }
+                rdr.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return categories;
+            }
+
+            return categories;
+        }
+
+
+        public static Dictionary<int, string> GetCategoryNames()
+        {
+            // This method helps get the category name given the category id
+
+            // list of Category Objects
+            Dictionary<int, string> categories = new Dictionary<int, string>();
+            try
+            {
+                // Opening a connection to MySql server
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                MySqlConnection conn = new MySqlConnection(connectionString);
+
+                conn.Open();
+
+
+                // SQL Query to insert new category
+                string sqlquery = "SELECT * FROM category;";
+                MySqlCommand cmd = new MySqlCommand(sqlquery, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    categories.Add(int.Parse(rdr[0].ToString()), rdr[1].ToString());
+                }
+                rdr.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return categories;
+            }
+
+            return categories;
+        }
     }
+
+    
 }

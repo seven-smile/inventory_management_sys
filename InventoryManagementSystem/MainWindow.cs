@@ -40,5 +40,11 @@ namespace InventoryManagementSystem
             lblTitle.Text = "Categories";
             openChildForm(new Forms.Categories());
         }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Products";
+            openChildForm(new Forms.Products());
+        }
     }
 }

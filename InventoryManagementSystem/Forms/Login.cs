@@ -17,6 +17,12 @@ namespace InventoryManagementSystem.Forms
             InitializeComponent();
         }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            //this.Close();
 
+            //Form main = new MainWindow();
+            //main.Show();
+        }
     }
 }
