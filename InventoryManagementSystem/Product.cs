@@ -176,6 +176,41 @@ namespace InventoryManagementSystem
 
             return 1;
         }
+
+
+        public static int UpdateProductQuantity(int id, int quantity)
+        {
+            try
+            {
+                // Opening a connection to MySql server
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                MySqlConnection conn = new MySqlConnection(connectionString);
+
+                conn.Open();
+
+
+                // SQL Query to update user where id=id
+                string sqlquery = "UPDATE `product` SET `quantity` = ?quantity WHERE (`id` = ?id);";
+
+                MySqlCommand cmd = new MySqlCommand(sqlquery, conn);
+                cmd.Parameters.Add("?id", MySqlDbType.Int64).Value = id;
+                cmd.Parameters.Add("?quantity", MySqlDbType.Int64).Value = quantity;
+                
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                //MySqlDataReader rdr = cmd.ExecuteReader();
+                //rdr.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+
+            return 1;
+        }
+
     }
 }
 

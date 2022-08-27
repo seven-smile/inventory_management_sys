@@ -235,6 +235,7 @@
             this.Controls.Add(this.panelMenu);
             this.Name = "MainWindow";
             this.Text = "Main Window";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
