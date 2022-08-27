@@ -150,7 +150,7 @@ namespace InventoryManagementSystem.Forms
             lblTotal.Text = "";
             textBoxProduct.Clear();
             textBoxBarcode.Clear();
-            numericQuantity.Value = 0;
+            numericQuantity.Value = 1;
             numericPaid.Value = 0;
             numericChange.Value = 0;
 

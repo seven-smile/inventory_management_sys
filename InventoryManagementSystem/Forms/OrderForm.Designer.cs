@@ -64,6 +64,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.mySqlCommand1 = new MySqlConnector.MySqlCommand();
             this.panel10.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -461,6 +462,13 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Total";
             // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CommandTimeout = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.Transaction = null;
+            this.mySqlCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -532,5 +540,6 @@
         private DataGridViewTextBoxColumn colProductName;
         private DataGridViewTextBoxColumn colQuantity;
         private Button btnCompleteOrder;
+        private MySqlConnector.MySqlCommand mySqlCommand1;
     }
 }
