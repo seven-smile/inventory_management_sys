@@ -40,7 +40,7 @@ namespace InventoryManagementSystem
             try
             {
                 // Opening a connection to MySql server
-                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=@Nanahemaaml7;";
                 MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();
@@ -81,7 +81,7 @@ namespace InventoryManagementSystem
             try
             {
                 // Opening a connection to MySql server
-                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=@Nanahemaaml7;";
                 MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();
@@ -94,7 +94,7 @@ namespace InventoryManagementSystem
 
                 while (rdr.Read())
                 {
-                    products.Add(new Product(id:rdr[0].ToString(), code: rdr[7].ToString(),  name:rdr[1].ToString(), quantity:int.Parse(rdr[2].ToString()), cost_price:float.Parse(rdr[3].ToString()), retail_price:float.Parse(rdr[4].ToString()), reorder_level:int.Parse(rdr[5].ToString()), category:int.Parse(rdr[6].ToString())));
+                    products.Add(new Product(id:rdr[0].ToString(), code: rdr[2].ToString(),  name:rdr[1].ToString(), quantity:int.Parse(rdr[3].ToString()), cost_price:float.Parse(rdr[4].ToString()), retail_price:float.Parse(rdr[5].ToString()), reorder_level:int.Parse(rdr[6].ToString()), category:int.Parse(rdr[7].ToString())));
                 }
                 rdr.Close();
 
@@ -114,7 +114,7 @@ namespace InventoryManagementSystem
             try
             {
                 // Opening a connection to MySql server
-                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=@Nanahemaaml7;";
                 MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();
@@ -153,7 +153,7 @@ namespace InventoryManagementSystem
             try
             {
                 // Opening a connection to MySql server
-                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=@Nanahemaaml7;";
                 MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();
@@ -183,7 +183,7 @@ namespace InventoryManagementSystem
             try
             {
                 // Opening a connection to MySql server
-                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=@Nanahemaaml7;";
                 MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();

@@ -31,7 +31,7 @@ namespace InventoryManagementSystem
                 DateTime date_now = DateTime.Now;
 
                 // Opening a connection to MySql server
-                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=@Nanahemaaml7;";
                 MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();
@@ -76,7 +76,7 @@ namespace InventoryManagementSystem
             try
             {
                 // Opening a connection to MySql server
-                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=@Nanahemaaml7;";
                 MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();
@@ -109,7 +109,7 @@ namespace InventoryManagementSystem
             try
             {
                 // Opening a connection to MySql server
-                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=@Nanahemaaml7;";
                 MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();
@@ -142,7 +142,7 @@ namespace InventoryManagementSystem
             try
             {
                 // Opening a connection to MySql server
-                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=@Nanahemaaml7;";
                 MySqlConnection conn = new MySqlConnection(connectionString);
 
                 conn.Open();

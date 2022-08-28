@@ -12,8 +12,8 @@ namespace InventoryManagementSystem
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new Forms.OrderForm());
-            //Application.Run(new MainWindow());
-            Application.Run(new Forms.LoginWindow());
+            Application.Run(new MainWindow());
+            //Application.Run(new Forms.LoginWindow());
         }
     }
 }

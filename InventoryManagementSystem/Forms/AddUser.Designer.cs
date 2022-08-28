@@ -63,7 +63,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(46, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 30);
+            this.label5.Size = new System.Drawing.Size(102, 24);
             this.label5.TabIndex = 0;
             this.label5.Text = "Add User";
             // 
@@ -71,9 +71,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(100, 132);
+            this.label1.Location = new System.Drawing.Point(101, 132);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 23);
+            this.label1.Size = new System.Drawing.Size(82, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username : ";
             // 
@@ -83,7 +83,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(99, 242);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 23);
+            this.label2.Size = new System.Drawing.Size(84, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Full Name : ";
             // 
@@ -93,7 +93,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(100, 297);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 23);
+            this.label3.Size = new System.Drawing.Size(79, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "Password : ";
             // 
@@ -103,7 +103,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(99, 354);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 23);
+            this.label4.Size = new System.Drawing.Size(137, 19);
             this.label4.TabIndex = 1;
             this.label4.Text = "Re-enter Password : ";
             // 
@@ -112,7 +112,7 @@
             this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxUsername.Location = new System.Drawing.Point(292, 132);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(257, 30);
+            this.textBoxUsername.Size = new System.Drawing.Size(257, 26);
             this.textBoxUsername.TabIndex = 2;
             // 
             // textBoxName
@@ -120,7 +120,7 @@
             this.textBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxName.Location = new System.Drawing.Point(292, 246);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(257, 30);
+            this.textBoxName.Size = new System.Drawing.Size(257, 26);
             this.textBoxName.TabIndex = 2;
             // 
             // textBoxPassword1
@@ -128,7 +128,7 @@
             this.textBoxPassword1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxPassword1.Location = new System.Drawing.Point(292, 297);
             this.textBoxPassword1.Name = "textBoxPassword1";
-            this.textBoxPassword1.Size = new System.Drawing.Size(257, 30);
+            this.textBoxPassword1.Size = new System.Drawing.Size(257, 26);
             this.textBoxPassword1.TabIndex = 2;
             this.textBoxPassword1.UseSystemPasswordChar = true;
             // 
@@ -137,7 +137,7 @@
             this.textBoxPassword2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxPassword2.Location = new System.Drawing.Point(292, 359);
             this.textBoxPassword2.Name = "textBoxPassword2";
-            this.textBoxPassword2.Size = new System.Drawing.Size(257, 30);
+            this.textBoxPassword2.Size = new System.Drawing.Size(257, 26);
             this.textBoxPassword2.TabIndex = 2;
             this.textBoxPassword2.UseSystemPasswordChar = true;
             // 
@@ -178,7 +178,7 @@
             "Attendant"});
             this.comboBoxRole.Location = new System.Drawing.Point(292, 190);
             this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(257, 31);
+            this.comboBoxRole.Size = new System.Drawing.Size(257, 27);
             this.comboBoxRole.TabIndex = 4;
             // 
             // label6
@@ -187,7 +187,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(100, 185);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 23);
+            this.label6.Size = new System.Drawing.Size(48, 19);
             this.label6.TabIndex = 1;
             this.label6.Text = "Role : ";
             // 
@@ -198,7 +198,7 @@
             this.lblError.ForeColor = System.Drawing.Color.Red;
             this.lblError.Location = new System.Drawing.Point(100, 431);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(45, 28);
+            this.lblError.Size = new System.Drawing.Size(36, 23);
             this.lblError.TabIndex = 5;
             this.lblError.Text = "Error";
             this.lblError.UseCompatibleTextRendering = true;
@@ -206,7 +206,7 @@
             // 
             // AddUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 565);
             this.Controls.Add(this.lblError);
