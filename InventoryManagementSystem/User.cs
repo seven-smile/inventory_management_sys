@@ -155,6 +155,41 @@ namespace InventoryManagementSystem
             return 1;
         }
 
+        public static int AuthenticateUser(string username, string password)
+        {
+            bool authenticated = false;
+            try
+            {
+                // Opening a connection to MySql server
+                string connectionString = "server=localhost;database=inventory;uid=root;pwd=prince;";
+                MySqlConnection conn = new MySqlConnection(connectionString);
+
+                conn.Open();
+
+
+                // SQL Query to update user where id=id
+                string sqlquery = "SELECT `username`, `password` FROM `user`  WHERE (`username` = ?username);";
+                MySqlCommand cmd = new MySqlCommand(sqlquery, conn);
+                cmd.Parameters.Add("?username", MySqlDbType.VarChar).Value = username;
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                 
+                while (rdr.Read())
+                {
+                    if (MD5Hash(password) == rdr[1].ToString()) authenticated = true;
+                }
+                rdr.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+
+            if(authenticated) return 1; else return 0;
+        }
+
         public static string MD5Hash(string input)
         {
             StringBuilder hash = new StringBuilder();

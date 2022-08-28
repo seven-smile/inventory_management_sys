@@ -209,6 +209,7 @@
             this.textBoxSearch.PlaceholderText = "Search Products";
             this.textBoxSearch.Size = new System.Drawing.Size(466, 38);
             this.textBoxSearch.TabIndex = 0;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged_1);
             // 
             // panel3
             // 
@@ -335,6 +336,7 @@
             this.btnClear.TabIndex = 6;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
             // btnAddBasket
             // 

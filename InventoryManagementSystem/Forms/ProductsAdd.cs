@@ -12,6 +12,7 @@ namespace InventoryManagementSystem.Forms
 {
     public partial class ProductsAdd : Form
     {
+        Dictionary<string, int> categories_dict = Category.GetCategoryIds();
         public ProductsAdd()
         {
             InitializeComponent();
@@ -38,7 +39,6 @@ namespace InventoryManagementSystem.Forms
             }
 
             // get the int equivalent of the category string
-            Dictionary<string, int> categories_dict = Category.GetCategoryIds();
             int cat_id = categories_dict[category];
             
 
@@ -63,7 +63,13 @@ namespace InventoryManagementSystem.Forms
 
         private void ProductsAdd_Load(object sender, EventArgs e)
         {
-
+            
+            // add categories to combo box
+            for (int i = 0; i < categories_dict.Count; i++)
+            {
+                comboBoxCategory.Items.Add(categories_dict.Keys.ElementAt(i).ToString());
+            }
+            
         }
     }
 }

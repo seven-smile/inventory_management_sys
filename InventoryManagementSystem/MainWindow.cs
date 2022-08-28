@@ -2,6 +2,7 @@ namespace InventoryManagementSystem
 {
     public partial class MainWindow : Form
     {
+        private bool is_admin = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -52,6 +53,12 @@ namespace InventoryManagementSystem
         {
             lblTitle.Text = "Order";
             openChildForm(new Forms.OrderForm());
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Sales";
+            openChildForm(new Forms.Sales());
         }
     }
 }

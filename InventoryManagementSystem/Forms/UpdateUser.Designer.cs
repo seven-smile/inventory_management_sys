@@ -105,6 +105,7 @@
             this.textBoxPassword2.Name = "textBoxPassword2";
             this.textBoxPassword2.Size = new System.Drawing.Size(257, 30);
             this.textBoxPassword2.TabIndex = 12;
+            this.textBoxPassword2.UseSystemPasswordChar = true;
             // 
             // textBoxPassword1
             // 
@@ -113,6 +114,7 @@
             this.textBoxPassword1.Name = "textBoxPassword1";
             this.textBoxPassword1.Size = new System.Drawing.Size(257, 30);
             this.textBoxPassword1.TabIndex = 13;
+            this.textBoxPassword1.UseSystemPasswordChar = true;
             // 
             // textBoxName
             // 

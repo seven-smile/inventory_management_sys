@@ -14,6 +14,7 @@ namespace InventoryManagementSystem.Forms
     {
         private List<Product> products = Product.GetProducts();
         private Dictionary<string, int> basket = new Dictionary<string, int>();
+        private Dictionary<string, int> basketWithCode = new Dictionary<string, int>();
         public OrderForm()
         {
             InitializeComponent();
@@ -89,7 +90,7 @@ namespace InventoryManagementSystem.Forms
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click_1(object sender, EventArgs e)
         {
             textBoxBarcode.Enabled = true;
             textBoxProduct.Enabled = true;
@@ -109,6 +110,10 @@ namespace InventoryManagementSystem.Forms
             // add to basket
             if (basket.Keys.Contains(name)) basket[name] += quantity;
             else basket.Add(name, quantity);
+
+            // add to basketWithCode
+            if (basketWithCode.Keys.Contains(code)) basket[code] += quantity;
+            else basketWithCode.Add(code, quantity);
 
             // update basket
             dgvBasket.Rows.Clear();
@@ -146,31 +151,54 @@ namespace InventoryManagementSystem.Forms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            // clear
-            lblTotal.Text = "";
-            textBoxProduct.Clear();
-            textBoxBarcode.Clear();
-            numericQuantity.Value = 1;
-            numericPaid.Value = 0;
-            numericChange.Value = 0;
-
-            textBoxBarcode.Enabled = true;
-            textBoxProduct.Enabled = true;
-
-
             // save order
+            int saveSales = Sale.AddSale(basketWithCode);
+            if (saveSales > 0)
+            {
+
+                // clear
+                lblTotal.Text = "";
+                textBoxProduct.Clear();
+                textBoxBarcode.Clear();
+                numericQuantity.Value = 1;
+                numericPaid.Value = 0;
+                numericChange.Value = 0;
+
+                textBoxBarcode.Enabled = true;
+                textBoxProduct.Enabled = true;
 
 
 
-            // update product quantities
 
 
-            // clear basket
-            dgvBasket.Rows.Clear();
 
-            // empty basket
-            basket.Clear();
+                // update product quantities
+
+
+                // clear basket
+                dgvBasket.Rows.Clear();
+
+                // empty basket
+                basket.Clear();
+            }
 
         }
+
+        private void textBoxSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            dgvSearch.Rows.Clear();
+
+            for (int i = 0; i < products.Count; i++)
+            {
+                Product product = products[i];
+
+                // if product name contains search term
+                if (product.name.ToLower().Contains(textBoxSearch.Text.ToLower()))
+                {
+                    dgvSearch.Rows.Add(product.code, product.name, product.retail_price);
+                }
+            }
+        }
+
     }
 }

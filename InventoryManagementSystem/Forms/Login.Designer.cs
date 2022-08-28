@@ -31,8 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -44,8 +44,8 @@
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnLogin);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBoxPassword);
+            this.panel1.Controls.Add(this.textBoxUsername);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(66, 64);
             this.panel1.Name = "panel1";
@@ -78,25 +78,26 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(87, 194);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "Password";
-            this.textBox2.Size = new System.Drawing.Size(250, 34);
-            this.textBox2.TabIndex = 2;
+            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPassword.Location = new System.Drawing.Point(87, 194);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(20);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PlaceholderText = "Password";
+            this.textBoxPassword.Size = new System.Drawing.Size(250, 34);
+            this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
-            // textBox1
+            // textBoxUsername
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(87, 132);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Username";
-            this.textBox1.Size = new System.Drawing.Size(250, 34);
-            this.textBox1.TabIndex = 1;
+            this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxUsername.Location = new System.Drawing.Point(87, 132);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(20);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.PlaceholderText = "Username";
+            this.textBoxUsername.Size = new System.Drawing.Size(250, 34);
+            this.textBoxUsername.TabIndex = 1;
             // 
             // panel2
             // 
@@ -127,6 +128,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "LoginWindow";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.LoginWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -138,8 +140,8 @@
         #endregion
 
         private Panel panel1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox textBoxPassword;
+        private TextBox textBoxUsername;
         private Panel panel2;
         private Label lblLogin;
         private Button btnLogin;
